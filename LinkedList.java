@@ -41,4 +41,53 @@ public class LinkedList {
             }
         }
     }
+
+    public void deleteAt(int index){
+        Node n = head;
+        Node temp = null;
+        if (index == 0){
+            head = head.next;
+        }
+        else{
+            //moving the code here fixes the issue, why? is it because of the method on n, assigning head to it? ohhh its because it doesnt just copy it
+            //it assigns the address to it, let me try this. yep, that fixed it i moved Node n = head; and Node temp = null; back up, and changed head = head.next 
+            //to n = n.next, this is because of how objects copy in java
+            for (int i = 0; i < index - 1; i++){
+                n = n.next; //traverse the list until n is the node before index we want to delete, n.next being the index we want to delete
+            }
+            temp = n.next; //assigns pointer to the data at n.next
+            n.next = temp.next; //assigns the node we want to delete at temp.next, the spot afterwards; n.next.next
+            temp = null; //garbage collection gets rid of the mem taken
+        }
+    }
+    public void delete(int data){
+        if (head.data == data){
+            head = null;
+        }
+        Node n = head; //temp node
+        Node temp = null;
+        while (n != null){//traverse the list all indexes
+            System.out.println(n.data);
+            Node prev = n;
+            if (n.data == data){ //if the data you wish to delete is found
+                System.out.println("found data");
+                if (n.next != null){
+                    System.out.println(n.data+1);
+                    prev = n.next;
+                    //n.next = n.next.next;
+                    //temp = n.next; //temp -> n+1 in case of 45 points to null index 3
+                    //n.next = temp.next; //n.next = 12 n.next == n.next.next == null;
+                }
+                else{
+                    n = null;//deletes last node
+                    System.out.println("node deleted");
+                }
+                
+                
+                //need to point n-1 node to n+1 node, dropping n node from the list
+            }
+            n = n.next;
+        }
+        temp = null;
+    }
 }
