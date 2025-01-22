@@ -62,32 +62,26 @@ public class LinkedList {
     }
     public void delete(int data){
         if (head.data == data){
-            head = null;
+            head = head.next;
+            return;
         }
         Node n = head; //temp node
-        Node temp = null;
-        while (n != null){//traverse the list all indexes
-            System.out.println(n.data);
-            Node prev = n;
-            if (n.data == data){ //if the data you wish to delete is found
-                System.out.println("found data");
-                if (n.next != null){
-                    System.out.println(n.data+1);
-                    prev = n.next;
-                    //n.next = n.next.next;
-                    //temp = n.next; //temp -> n+1 in case of 45 points to null index 3
-                    //n.next = temp.next; //n.next = 12 n.next == n.next.next == null;
-                }
-                else{
-                    n = null;//deletes last node
-                    System.out.println("node deleted");
-                }
-                
-                
-                //need to point n-1 node to n+1 node, dropping n node from the list
+        Node prev = head;
+        while (n.next != null){
+           // System.out.println(n.data);
+            if (n.data == data){
+               // System.out.println("prev data: " + prev.data);
+                //System.out.println("n data: " + n.data);
+                prev.next = n.next;
+                return;
             }
-            n = n.next;
+            else{
+                prev = n;
+                n = n.next;
+            }
         }
-        temp = null;
+        if (n.data == data){
+            prev.next = null;
+        }
     }
 }

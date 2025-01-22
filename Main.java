@@ -7,8 +7,7 @@ class Main {
         list.insert(12);
         //list.show();
         //list.deleteAt(1);
-        list.delete(12);
-        
+        list.delete(45);
         list.show();
 
         //list.deleteAt(1);
