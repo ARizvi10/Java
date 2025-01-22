@@ -68,7 +68,7 @@ public class LinkedList {
         Node n = head; //temp node
         Node prev = head;
         while (n.next != null){
-           // System.out.println(n.data);
+           // System.out.println(n.data); commit
             if (n.data == data){
                // System.out.println("prev data: " + prev.data);
                 //System.out.println("n data: " + n.data);
