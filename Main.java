@@ -5,14 +5,10 @@ class Main {
         list.insert(18);
         list.insert(45);
         list.insert(12);
-        //list.show();
-        //list.deleteAt(1);
-        list.delete(45);
+
+        list.replaceNodeAtIndex(0,52);
         list.show();
 
-        //list.deleteAt(1);
-        //commit
-        //list.show();
 
     }
 }
