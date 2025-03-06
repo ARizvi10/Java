@@ -6,17 +6,18 @@ public class LinkedList {
         Node node = new Node();
         node.data = data;
 
-        if (head == null){
+
+        if (head == null) {
             head = node;
         }
-        else {
-            Node n = head; //temp node
-            while (n.next != null){
-                n = n.next;
+        else{
+            Node curr = head;
+            while (curr.next != null){
+                curr = curr.next;
             }
-            n.next = node; //assigns ins. node at end with prev node pointing to it
+            curr.next = node;
+
         }
-        
     }
 
     public void show() {
