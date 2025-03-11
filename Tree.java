@@ -11,11 +11,11 @@ public class Tree{
         this.children = new ArrayList<>();
     }
 
-    ArrayList<> visited = new ArrayList<>();
+    //ArrayList<> visited = new ArrayList<>();
 
-    public void createTree(ArrayList<Integer>){ //create a tree using an arraylist of integers
+    //public void createTree(ArrayList<Integer>){ //create a tree using an arraylist of integers
 
-    }
+    //}
 
 
     //when a node is visited and popped, add it to the visited arraylist
